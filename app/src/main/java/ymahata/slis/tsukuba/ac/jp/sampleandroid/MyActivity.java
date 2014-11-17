@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import com.sun.syndication.feed.synd.SyndEntry;
 
 public class MyActivity extends Activity {
 
