@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.sun.syndication.feed.synd.SyndEntry;
 
 public class MyActivity extends Activity {
 
@@ -18,7 +17,7 @@ public class MyActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
+//        getMenuInflater().inflate(R.menu.my, menu);
         return true;
     }
 
