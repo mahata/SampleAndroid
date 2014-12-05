@@ -8,9 +8,20 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MyActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Chars Count"
+        android:id="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
         android:id="@+id/scrollView">
         <EditText
             android:layout_width="match_parent"
@@ -19,18 +30,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:inputType="textMultiLine"
-            android:minLines="3"
+            android:minLines="5"
             android:hint="Add your memo!"
             />
     </ScrollView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Chars Count"
-        android:id="@+id/textView"
-        android:layout_alignTop="@+id/scrollView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp" />
 </RelativeLayout>
