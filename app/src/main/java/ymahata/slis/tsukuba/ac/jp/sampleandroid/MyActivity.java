@@ -9,19 +9,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MyActivity extends Activity implements TextWatcher {
 
     private static final String TAG = "MainActivity";
-    private EditText memo;
+    private static final int MAX_STRING_LENGTH = 140;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
-        memo = (EditText) findViewById(R.id.editText);
-        memo.addTextChangedListener(this);
+        EditText ed = (EditText) findViewById(R.id.editText);
+        ed.addTextChangedListener(this);
     }
 
 
@@ -53,6 +54,10 @@ public class MyActivity extends Activity implements TextWatcher {
     @Override
     public void afterTextChanged(Editable s) {
         String memo = s.toString();
+
+        TextView tv = (TextView) findViewById(R.id.textView);
+        tv.setText("Chars remaining: " + (MAX_STRING_LENGTH - s.length()));
+
         Log.d(TAG, "Checking for " + memo);
     }
 }

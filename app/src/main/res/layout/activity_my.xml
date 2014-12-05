@@ -11,7 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:id="@+id/scrollView">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,4 +23,14 @@
             android:hint="Add your memo!"
             />
     </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Chars Count"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/scrollView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="84dp" />
 </RelativeLayout>
