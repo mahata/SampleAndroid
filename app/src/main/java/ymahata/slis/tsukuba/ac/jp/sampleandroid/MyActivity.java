@@ -1,6 +1,7 @@
 package ymahata.slis.tsukuba.ac.jp.sampleandroid;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,14 +16,20 @@ public class MyActivity extends Activity implements TextWatcher {
 
     private static final String TAG = "MainActivity";
     private static final int MAX_STRING_LENGTH = 140;
+    private static final String MEMO_KEY = "memo_key";
+    private SharedPreferences myPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
+        myPrefs = getPreferences(MODE_PRIVATE);
+        String memo = myPrefs.getString(MEMO_KEY, "");
+
         EditText ed = (EditText) findViewById(R.id.editText);
         ed.addTextChangedListener(this);
+        ed.setText(memo);
     }
 
 
@@ -58,6 +65,7 @@ public class MyActivity extends Activity implements TextWatcher {
         TextView tv = (TextView) findViewById(R.id.textView);
         tv.setText("Chars remaining: " + (MAX_STRING_LENGTH - s.length()));
 
+        myPrefs.edit().putString(MEMO_KEY, s.toString()).commit();
         Log.d(TAG, "Checking for " + memo);
     }
 }
